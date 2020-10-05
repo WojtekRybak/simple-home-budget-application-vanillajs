@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="budgetStyleTest.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Wallet</title>
+</head>
+<body>
+    <nav id="main-nav">
+        <div class="container">
+           <div class="show-wallet">
+               <div class="wallet-logo">
+                    <i class="fas fa-wallet fa-2x"></i>
+               </div>
+               <div class="wallet-data">
+                    <div id="budget">
+                        <span>$ </span><span id="budget-amount">0</span> 
+                    </div> 
+               </div>  
+            </div>
+            <div class="details">
+               <div class="show-details">
+                   <div class="search">
+                    <a href="#" class="search-icon" >
+                        <i class="fas fa-search fa-2x"></i>
+                     </a>
+                   </div>
+                   <div class="report">
+                    <a href="#" class="report-icon" >
+                        <i class="fal fa-analytics fa-2x"></i>
+                     </a>
+                   </div>
+                   <div class="transaction-button">
+                       <button class="button" id="addTransaction-btn">Add Transaction</button>
+                   </div>
+               </div> 
+            </div>
+        </div>
+    </nav>
+    <section id="transaction-data">
+        <div class="transaction-container">
+            <div class="content">
+                <div class="content-header">
+                    <div class="tabs-wrapper">
+                        <a class="tabs-item"href="">Last Month</a>
+                        <a class="tabs-item"href="">This Month</a>
+                        <a class="tabs-item"href="">Future</a>
+                    </div>
+                </div>
+                <div class="content-inflow">
+                    <div class="inflow">
+                        <h8 class="text-uppercase info-title">Inflow</h3>
+                    </div>
+                    <div class="outflow">
+                        <h8 class="text-uppercase mt-2 budget" id="budget"><span>$ </span><span id="inflow-amount">0</span></h8>
+                    </div>     
+                </div> 
+                <div class="content-inflow">
+                    <div class="inflow">
+                        <h8 class="text-uppercase info-title">Outflow</h3>
+                    </div>
+                    <div class="outflow">
+                        <h8 class="text-uppercase mt-2 budget" id="budget"><span>$ </span><span id="outflow-amount">0</span></h8>
+                    </div> 
+                </div>
+                <div class="content-inflow">
+                    <div class="inflow">
+                        <h8 class="text-uppercase info-title"></h3>
+                    </div>
+                    <div class="outflow">
+                        <h8 class="text-uppercase mt-2 budget" id="budget"><span>$ </span><span id="total-amount">0</span></h8>
+                    </div>                  
+                </div> 
+        </div>
+        <div class="expense-wrapper">
+             <h5 class="title">Add transaction</h5>
+                <div class="card-body">  
+                    <div>
+                     <form id="expense-form">
+                        <div >
+                            <input class="input-amount" type="number" name="amount" placeholder='Amount'> <!--what is name for??-->
+                        </div>  
+                    </div>
+                        <div >
+                             <input type="text" id="preDate"class="datepicker"placeholder="Date">
+                         </div>
+                          <div class="input-group">
+                             <div class="select">
+                                <select name="subject">
+                                    <option disabled="disabled" selected="selected">Choose Category</option>
+                                    <option>Subject 1</option>
+                                    <option>Subject 2</option>
+                                    <option>Subject 3</option>
+                                </select>
+                                    <div class="select-dropdown"></div>
+                                </div>
+                                </div>
+                                <div class="row-space">
+                                    <div class="input-group">
+                                        <input class="input-note" type="text"placeholder='Note'>
+                                    </div>                       
+                                </div>
+                                <div class="expense-buttons">
+                                    <div class="button save">
+                                        <button class="button" type="submit">Save</button>
+                                    </div>
+                                </div>  
+                     </form>         
+             </div>
+     </div>
+     <div class="expense-overlay"></div> 
+    <div class="wallet-wrapper">
+        <div class="wallet">
+            <h4 class="title">Enter your income</h4>
+                <div class="card-body">  
+                    <form id="wallet-form">
+                        <div class="row-space">
+                                <input class="wallet-input" type="number"placeholder='Amount'>  
+                        </div>     
+                        <input type="text" id="preDate"class="datepicker"placeholder="Date">            
+                            
+                        <div class="expense-buttons">
+                            <div class="button save">
+                                <button type="submit" id="saveWallet">Save</button>
+                            </div>
+                        </div>   
+                    </form>                        
+                </div>          
+    </div>
+    </div>
+    <div class="expense-overlay"></div>  
+         
+    </section>
+   <script src="myBudget.js"></script>  
+   <script type="text/javascript" src="js/materialize.min.js"></script> 
+</body>
+</html>

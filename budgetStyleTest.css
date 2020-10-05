@@ -1,0 +1,278 @@
+:root
+{
+    --primary-color: #c72727;
+    --secondary-color: #f99500;
+    --light-color: #f3f3f3;
+    --dark-color: #333;
+    --grey-color: #c7c7c7;
+    --max-width: 1100px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background: var(--grey-color);
+    line-height: 1.5; 
+}
+a{
+    text-decoration: none;
+}
+button{
+    background-color: rgb(26, 163, 51);
+    text-decoration: none;
+    color: var(--light-color);
+    border-radius: 4px;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 700;
+    line-height: 16px;
+}
+#main-nav
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+    background-color: var(--light-color);
+    /*position: relative;*/
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,.27)
+}
+#main-nav .container
+{
+    width: 100%;
+    margin-top: 0;
+    
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+.show-wallet
+{
+    display: flex;
+    cursor: pointer;
+    color: black;
+} 
+#main-nav .show-wallet .wallet-logo
+{
+    padding-right: 1rem;
+    color:  rgb(26, 163, 51) ;
+}
+
+.show-details
+{
+    display:flex;  
+    padding: auto;   
+}
+#main-nav .show-details a
+{
+    padding: 0.5rem;
+    color: rgb(196, 196, 196);
+}
+
+#main-nav .show-details .button
+{
+    font-size: 14px;
+    margin-top: 0.3rem;
+    padding: 0.4rem 1rem;
+    margin-left: 3rem; 
+    cursor: pointer;  
+}
+#main-nav .show-details .button:hover
+{
+    background-color: rgb(26, 163, 51, 0.7);
+}
+.show-wallet::after{
+    content: 'Enter income';
+    position: absolute;
+    display: block;
+    font-size: 0.8em;
+    color: white;
+    background-color: var(--dark-color);
+    padding: 0.5em 1em;
+    border-radius: 2px;
+    top:4rem;
+    z-index: 1000;
+    transform: scale(0);
+    transition: ease-out 150ms, bottom ease-out;
+}
+.show-wallet:hover::after{
+    transform: scale(1);
+}
+
+
+.search a::after {
+    content: 'search';
+    position: absolute;
+    display: block;
+    font-size: 0.8em;
+    color: white;
+    background-color: var(--dark-color);
+    padding: 0.5em 1em;
+    border-radius: 2px;
+    top:4rem;
+    z-index: 1000;
+    transform: scale(0);
+    transition: ease-out 150ms, bottom ease-out;
+    
+}
+.search a:hover::after {
+   transform: scale(1);
+      
+}
+.report a::after{
+    content: 'report';
+    position: absolute;
+    display: block;
+    font-size: 0.8em;
+    color: white;
+    background-color: var(--dark-color);
+    padding: 0.5em 1em;
+    border-radius: 2px;
+    top:4rem;
+    z-index: 1000;
+    transform: scale(0);
+    transition: ease-out 150ms, bottom ease-out; 
+}
+.report a:hover::after
+{
+    transform: scale(1);
+}
+
+
+
+.transaction-button
+{
+    padding: auto;
+}
+#transaction-data .transaction-container
+{
+    height: 100vh;
+    width: 100%;
+    margin-top: 6rem;
+}
+.content
+{
+    position: absolute;
+    width: 40rem;
+    
+    top:6rem;
+    left:25%;
+    
+    background-color: var(--light-color);
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,.27);
+}
+.content-header
+{
+    margin-bottom: 2.5rem;
+}
+.tabs-wrapper
+{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 3rem;
+    color: #a0a0a0;
+}
+.tabs-wrapper a
+{
+    color: #a0a0a0;
+}
+.content-inflow
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;   
+}
+.expense-wrapper 
+{
+    position: fixed;            /*header height?,margin */
+    top: 0;
+    left:250px;
+    width: 900px;
+    z-index: 2;
+    margin: 50px auto 100px auto;
+    height: 300px;;
+    background-color: var(--light-color);
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,.27);
+    transform: translateY(-1300px);
+    transition: transform 0.5s;
+}
+.wallet-wrapper
+{
+    position: fixed;            /*header height?,margin */
+    top: 0;
+    left:auto;
+    right: auto;
+    width: 900px;
+    z-index: 2;
+    margin: 50px auto 100px auto;
+    height: 300px;;
+    background-color: var(--light-color);
+    box-shadow: 0 3px 7px 0 rgba(0,0,0,.27);
+    transform: translateY(-1300px);
+    transition: transform 0.5s; 
+}
+.wallet-open
+{
+    transform: translateX(0) ;
+}
+.expense-open 
+{
+    transform: translateX(0);
+}
+.expense-overlay
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.expense-blur
+{
+    visibility: visible;
+    opacity: 1;
+}
+.expense-wrapper .card-body
+{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 2rem;
+    
+}
+.expense-buttons
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+.content .expense-item
+{
+    display: flex;
+    justify-content: space-between;
+}
+.expense-header
+{
+    width: 100%;
+    height: 1rem;
+    background-color:  #a0a0a0;
+}
+.expense-layout
+{
+    cursor: pointer;
+}
+.edit-expense
+{
+    transform: translateY(-100px);
+}
+
+
+
